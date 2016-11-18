@@ -5,14 +5,11 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
 
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
+    // deviceready Event Handler => Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        codePush.sync();
-        // Add test comment
+        codePush.sync(null, { updateDialog: true, installMode: InstallMode.IMMEDIATE });
     },
 
     // Update DOM on a Received Event
